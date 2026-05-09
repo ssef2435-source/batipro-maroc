@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="cKoYbi1pE6Zl93TdZsjmOOIo9fyWaI63dDuvGovRVpw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BATIPRO MAROC | Entreprise de Construction - Devis Gratuit</title>
+<meta name="description" content="BATIPRO MAROC - Entreprise de construction. Villas, maisons, rénovation. Demandez votre devis gratuit. Partout au Maroc.">
+<meta name="keywords" content="construction, batiment, devis, renovation, villa, maison, Maroc, BATIPRO, entreprise construction">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://batipro-maroc.tiiny.site/">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3b5d;
+            --secondary: #e74c3c;
+            --light: #f4f4f4;
+            --white: #fff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--light); }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+
+        .header {
+            background: var(--primary);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 80px; height: 80px;
+            border-radius: 50%; object-fit: cover;
+            border: 3px solid var(--secondary);
+        }
+        .header-text h1 { font-size: 28px; }
+        .header-text p { opacity: 0.8; }
+
+        .hero {
+            background: linear-gradient(135deg, #1a3b5d, #2c3e50);
+            padding: 60px 40px; text-align: center; color: white;
+            border-radius: 10px; margin-bottom: 20px;
+        }
+        .hero h2 { font-size: 36px; margin-bottom: 20px; }
+        .hero p { font-size: 18px; margin-bottom: 30px; }
+
+        .section {
+            background: var(--white); border-radius: 8px; padding: 30px;
+            margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .section h2 { color: var(--primary); margin-bottom: 20px; text-align: center; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .service-card { 
+            text-align: center; padding: 30px 20px; 
+            border: 2px solid #eee; border-radius: 15px; 
+            cursor: pointer; background: white;
+            transition: all 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-color: var(--secondary);
+        }
+        .service-card i { font-size: 50px; margin-bottom: 15px; }
+
+        #service-modal {
+            display: none; 
+            position: fixed; top: 0; left: 0; 
+            width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.8); 
+            z-index: 999; 
+            justify-content: center; 
+            align-items: center;
+        }
+        .modal-box {
+            background: white; padding: 30px; border-radius: 15px;
+            max-width: 650px; width: 95%; max-height: 85vh; overflow-y: auto;
+            position: relative;
+        }
+        .close-btn {
+            position: absolute; top: 15px; right: 15px;
+            font-size: 28px; cursor: pointer; color: #e74c3c;
+        }
+
+        input, textarea, select {
+            display: block; width: 100%; padding: 12px; margin: 10px 0;
+            border: 2px solid #ddd; border-radius: 8px; font-family: inherit;
+            font-size: 16px;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: var(--primary); outline: none;
+        }
+        .submit-btn {
+            background: var(--primary); color: white; border: none;
+            padding: 15px; font-size: 18px; border-radius: 8px;
+            cursor: pointer; width: 100%; font-weight: bold;
+        }
+        .whatsapp-btn {
+            background: #25D366; color: white; border: none;
+            padding: 12px; font-size: 16px; border-radius: 8px;
+            cursor: pointer; width: 100%; font-weight: bold;
+            margin-top: 10px; text-align: center; display: block;
+            text-decoration: none;
+        }
+        .footer { text-align: center; padding: 20px; color: #777; }
+        
+        .whatsapp-float {
+            position: fixed; bottom: 30px; left: 30px; z-index: 1000;
+            background: #25D366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            cursor: pointer; text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <img src="https://i.imgur.com/Hli7tBA.png" alt="BATIPRO MAROC">
+        </div>
+        <div class="header-text">
+            <h1>BATIPRO MAROC</h1>
+            <p>Votre partenaire de confiance en <strong>CONSTRUCTION</strong></p>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h2>Construisons l'avenir ensemble</h2>
+        <p>Cliquez sur un service ci-dessous pour demander votre devis personnalisé</p>
+    </div>
+
+    <div class="section">
+        <h2>Nos Services</h2>
+        <div class="services-grid">
+            <div class="service-card" onclick="openModal('construction')">
+                <i class="fa-solid fa-house-chimney" style="color:#e74c3c;"></i>
+                <h3>Construction</h3>
+                <p style="color:#666;">Villas, maisons, immeubles</p>
+                <p style="font-size:12px; color:#888;">À partir de 100 m²</p>
+            </div>
+            <div class="service-card" onclick="openModal('renovation')">
+                <i class="fa-solid fa-hammer" style="color:#f39c12;"></i>
+                <h3>Rénovation</h3>
+                <p style="color:#666;">Appartements, cuisines</p>
+                <p style="font-size:12px; color:#888;">Devis gratuit</p>
+            </div>
+            <div class="service-card" onclick="openModal('batiments')">
+                <i class="fa-solid fa-building" style="color:#3498db;"></i>
+                <h3>Bâtiments Pro</h3>
+                <p style="color:#666;">Bureaux, commerces</p>
+                <p style="font-size:12px; color:#888;">Normes de sécurité</p>
+            </div>
+            <div class="service-card" onclick="openModal('conseil')">
+                <i class="fa-solid fa-compass-drafting" style="color:#2ecc71;"></i>
+                <h3>Conseil</h3>
+                <p style="color:#666;">Plans 2D/3D</p>
+                <p style="font-size:12px; color:#888;">Consultation rapide</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 <strong>BATIPRO MAROC</strong> - Tous droits réservés.
+    </div>
+</div>
+
+<a href="https://wa.me/212666397561?text=Bonjour%20BATIPRO%20MAROC" target="_blank" class="whatsapp-float" title="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<div id="service-modal">
+    <div class="modal-box">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modal-content"></div>
+    </div>
+</div>
+
+<script>
+    const API_URL = "https://script.google.com/macros/s/AKfycbxtaq9nQrxJIpyVlT-eeVflmaSEL6TWCQsT4qvbqflKQqF6Ef9CLbyLC_Z0xnqu7WbLgw/exec";
+    const WHATSAPP = "212666397561";
+
+    function openModal(service) {
+        var content = "";
+        var whatsappMsg = "";
+        
+        if (service === "construction") {
+            whatsappMsg = "Bonjour%20BATIPRO%20MAROC,%20je%20souhaite%20un%20devis%20pour%20une%20CONSTRUCTION";
+            content = `
+                <div style="text-align:center;">
+                    <i class="fa-solid fa-house-chimney" style="font-size:60px; color:#e74c3c;"></i>
+                    <h2>Devis Construction</h2>
+                    <hr style="margin:15px 0;">
+                </div>
+                <form onsubmit="event.preventDefault(); submitServiceForm(this);">
+                    <input type="text" name="nom" placeholder="Votre nom complet *" required>
+                    <input type="tel" name="telephone" placeholder="Votre téléphone *" required>
+                    <input type="email" name="email" placeholder="Votre e-mail">
+                    <input type="text" name="ville" placeholder="Ville du projet *" required>
+                    <select name="type_construction" required>
+                        <option value="">Type de construction *</option>
+                        <option>Villa</option>
+                        <option>Maison</option>
+                        <option>Immeuble</option>
+                        <option>Studio / Appartement</option>
+                    </select>
+                    <select name="etages" required>
+                        <option value="">Nombre d'étages *</option>
+                        <option>RDC uniquement</option>
+                        <option>R+1</option>
+                        <option>R+2</option>
+                        <option>R+3 et plus</option>
+                    </select>
+                    <input type="number" name="surface_terrain" placeholder="Surface du terrain (en m²) *" required>
+                    <input type="number" name="surface_habitable" placeholder="Surface habitable souhaitée (en m²) *" required>
+                    <select name="budget" required>
+                        <option value="">Budget estimé *</option>
+                        <option>Moins de 300 000 DH</option>
+                        <option>300 000 - 600 000 DH</option>
+                        <option>600 000 - 1 000 000 DH</option>
+                        <option>Plus de 1 000 000 DH</option>
+                    </select>
+                    <textarea name="description" placeholder="Précisions..." rows="3"></textarea>
+                    <button type="submit" class="submit-btn">📩 ENVOYER</button>
+                </form>
+                <a href="https://wa.me/${WHATSAPP}?text=${whatsappMsg}" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
+            `;
+        } else if (service === "renovation") {
+            whatsappMsg = "Bonjour%20BATIPRO%20MAROC,%20je%20souhaite%20un%20devis%20pour%20une%20RENOVATION";
+            content = `
+                <div style="text-align:center;">
+                    <i class="fa-solid fa-hammer" style="font-size:60px; color:#f39c12;"></i>
+                    <h2>Devis Rénovation</h2>
+                    <hr style="margin:15px 0;">
+                </div>
+                <form onsubmit="event.preventDefault(); submitServiceForm(this);">
+                    <input type="text" name="nom" placeholder="Votre nom complet *" required>
+                    <input type="tel" name="telephone" placeholder="Votre téléphone *" required>
+                    <input type="email" name="email" placeholder="Votre e-mail">
+                    <input type="text" name="ville" placeholder="Ville du projet *" required>
+                    <select name="type_renovation" required>
+                        <option value="">Type de rénovation *</option>
+                        <option>Cuisine</option>
+                        <option>Salle de bain</option>
+                        <option>Appartement complet</option>
+                        <option>Maison complète</option>
+                        <option>Façade</option>
+                        <option>Combles / Sous-sol</option>
+                    </select>
+                    <select name="etat_actuel" required>
+                        <option value="">État actuel *</option>
+                        <option>Neuf (moins de 5 ans)</option>
+                        <option>Moyen (5 à 15 ans)</option>
+                        <option>Ancien (15 à 30 ans)</option>
+                        <option>Très ancien (plus de 30 ans)</option>
+                    </select>
+                    <input type="number" name="surface" placeholder="Surface à rénover (en m²) *" required>
+                    <select name="type_finition" required>
+                        <option value="">Type de finition *</option>
+                        <option>Économique</option>
+                        <option>Standard</option>
+                        <option>Haut de gamme</option>
+                        <option>Luxe</option>
+                    </select>
+                    <button type="submit" class="submit-btn">📩 ENVOYER</button>
+                </form>
+                <a href="https://wa.me/${WHATSAPP}?text=${whatsappMsg}" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
+            `;
+        } else if (service === "batiments") {
+            whatsappMsg = "Bonjour%20BATIPRO%20MAROC,%20je%20souhaite%20un%20devis%20pour%20un%20BATIMENT%20PROFESSIONNEL";
+            content = `
+                <div style="text-align:center;">
+                    <i class="fa-solid fa-building" style="font-size:60px; color:#3498db;"></i>
+                    <h2>Devis Bâtiment Pro</h2>
+                    <hr style="margin:15px 0;">
+                </div>
+                <form onsubmit="event.preventDefault(); submitServiceForm(this);">
+                    <input type="text" name="nom" placeholder="Votre nom complet *" required>
+                    <input type="tel" name="telephone" placeholder="Votre téléphone *" required>
+                    <input type="email" name="email" placeholder="Votre e-mail">
+                    <input type="text" name="ville" placeholder="Ville du projet *" required>
+                    <input type="text" name="nom_entreprise" placeholder="Nom de l'entreprise">
+                    <select name="type_pro" required>
+                        <option value="">Type de bâtiment *</option>
+                        <option>Bureaux</option>
+                        <option>Local commercial</option>
+                        <option>Entrepôt</option>
+                        <option>Usine / Atelier</option>
+                        <option>Restaurant / Café</option>
+                    </select>
+                    <input type="number" name="surface" placeholder="Surface totale (en m²) *" required>
+                    <input type="number" name="employes" placeholder="Nombre d'employés prévu">
+                    <button type="submit" class="submit-btn">📩 ENVOYER</button>
+                </form>
+                <a href="https://wa.me/${WHATSAPP}?text=${whatsappMsg}" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
+            `;
+        } else if (service === "conseil") {
+            whatsappMsg = "Bonjour%20BATIPRO%20MAROC,%20je%20souhaite%20une%20CONSULTATION";
+            content = `
+                <div style="text-align:center;">
+                    <i class="fa-solid fa-compass-drafting" style="font-size:60px; color:#2ecc71;"></i>
+                    <h2>Demande de Conseil</h2>
+                    <hr style="margin:15px 0;">
+                </div>
+                <form onsubmit="event.preventDefault(); submitServiceForm(this);">
+                    <input type="text" name="nom" placeholder="Votre nom complet *" required>
+                    <input type="tel" name="telephone" placeholder="Votre téléphone *" required>
+                    <input type="email" name="email" placeholder="Votre e-mail">
+                    <input type="text" name="ville" placeholder="Ville *" required>
+                    <select name="type_conseil" required>
+                        <option value="">Type de conseil *</option>
+                        <option>Plan 2D</option>
+                        <option>Plan 3D</option>
+                        <option>Suivi de chantier</option>
+                        <option>Optimisation des coûts</option>
+                        <option>Conseil en matériaux</option>
+                    </select>
+                    <select name="urgence" required>
+                        <option value="">Niveau d'urgence *</option>
+                        <option>Faible - Dans le mois</option>
+                        <option>Moyenne - Dans 2 semaines</option>
+                        <option>Élevée - Cette semaine</option>
+                        <option>Immédiate - Sous 48h</option>
+                    </select>
+                    <textarea name="description" placeholder="Décrivez votre besoin..." rows="4"></textarea>
+                    <button type="submit" class="submit-btn">📩 ENVOYER</button>
+                </form>
+                <a href="https://wa.me/${WHATSAPP}?text=${whatsappMsg}" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
+            `;
+        }
+        
+        document.getElementById("modal-content").innerHTML = content;
+        document.getElementById("service-modal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("service-modal").style.display = "none";
+    }
+
+    function submitServiceForm(form) {
+        var formData = new FormData(form);
+        var msgDiv = document.createElement("div");
+        msgDiv.style.cssText = "padding:15px; border-radius:8px; margin:15px 0; background:#d4edda; color:#155724; text-align:center;";
+        msgDiv.innerHTML = "⏳ Envoi en cours...";
+        form.appendChild(msgDiv);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", API_URL, true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                msgDiv.innerHTML = "✅ Demande envoyée avec succès !";
+                form.reset();
+                setTimeout(closeModal, 2000);
+            } else {
+                msgDiv.style.background = "#f8d7da";
+                msgDiv.style.color = "#721c24";
+                msgDiv.innerHTML = "❌ Erreur.";
+            }
+        };
+        xhr.onerror = function() {
+            msgDiv.style.background = "#f8d7da";
+            msgDiv.style.color = "#721c24";
+            msgDiv.innerHTML = "❌ Erreur de connexion.";
+        };
+        xhr.send(formData);
+    }
+</script>
+</body>
+</html>
